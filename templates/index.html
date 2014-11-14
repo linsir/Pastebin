@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% block content %}
+<h3>Code List:</h3>
+<hr>
+<div id="Codelist">
+{% for post in posts %}
+<ul class="list-unstyled">
+   <li>
+    <a href="/detail/{{ post[0] }}">{{ post[1] }}</a> 
+    <a style="padding-left: 0.8em;" href="/{{ post[3] }}/"><span class="label label-primary">{{ post[3] }}</span></a>
+    <div class="pull-right">
+    <small>{{ post[5] }}</small>
+    <!-- <a class="btn btn-danger" href="/admin/delete/{{ post[0] }}">Delete</a> -->
+
+    </div>
+   </li>
+</ul>
+{% end %}
+
+<ul class="pagination pull-right">
+    {%if page_info.paged>1 %}
+    <li><a href="{{ page_info.pre_url }}">上一页</a></li>
+    {% end %}
+
+    {% for i in range(page_info.paged-5, page_info.paged+5) %}
+        {% if i>=1 and i<=page_info.pages %}
+    <li {{if_out(i==page_info.paged,' class="active" ')}}><a href="{{ page_info.paged_url }}{{ i }}">
+                {{i}}
+            </a></li>
+        {% end %}
+    {% end %}
+
+    {% if page_info.paged<page_info.pages %}
+    <li><a href="{{ page_info.next_url }}">下一页</a></li>
+    {% end %}
+</ul>
+{% end %}

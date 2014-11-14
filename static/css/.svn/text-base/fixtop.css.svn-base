@@ -1,0 +1,68 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+  body{
+      padding-top: 35px;
+  	  padding-bottom: 20px;
+      font-size: 15px;
+      word-wrap: break-word;
+      font-family:"Quantico","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+      color: #555;
+      height: 1000px;
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {font-family:"Quantico","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+  
+.archlist  ul li a{padding-left: 1em;}
+  
+.footer {background: #E6EBEA fixed center top no-repeat;}
+
+/*@media (min-width: 1024px) {
+    .container {
+        max-width: 970px;
+    }
+}*/
+.container img {
+    max-width: 85%;
+	height:auto;
+    margin-left: 35px;
+    padding: 20px 0 20px 0;
+    display: inline-block;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 0 #fff;
+}
+
+#back-to-top{
+		position:fixed;
+		bottom:100px;
+		right:100px;
+	}
+	#back-to-top a{
+		text-align:center;
+		text-decoration:none;
+		color:#d1d1d1;
+		display:block;
+		width:80px;
+		
+		-moz-transition:color 1s; 
+		-webkit-transition:color 1s;
+		-o-transition:color 1s;
+	}
+	#back-to-top a:hover{
+		color:#979797;
+	}
+	#back-to-top a span{
+		background:#d1d1d1;
+		border-radius:6px;
+		display:block;
+		height:80px;
+		width:80px;
+		background:#d1d1d1 url(../images/arrow-up.png) no-repeat center center;
+		margin-bottom:5px;
+		-moz-transition:background 1s;
+		-webkit-transition:background 1s;
+		-o-transition:background 1s;
+	}
+	#back-to-top a:hover span{
+		background:#979797 url(../images/arrow-up.png) no-repeat center center;
+	}
+

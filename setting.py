@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2014-11-05 09:44:51
+# @Author  : Linsir (vi5i0n@qq.com)
+# @Link    : http://Linsir.sinaapp.com
+# @Version : $Id$
+
+import os
+
+site_name = 'Pastebin'
+
+paged_size = 20
+
+cookie_timeout = 1
+
+is_debug = False
+
+data_file = 'data.db'
+

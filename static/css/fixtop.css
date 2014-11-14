@@ -1,0 +1,56 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+  body{
+      padding-top: 50px;
+  	  padding-bottom: 16px;
+      font-size: 18px;
+      word-wrap: break-word;
+      font-family:"Quantico","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+      color: #555;
+      height: 1000px;
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {font-family:"Quantico","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+  
+  
+.footer {background: #E6EBEA fixed center top no-repeat;}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+#back-to-top{
+		position:fixed;
+		bottom:100px;
+		right:100px;
+	}
+	#back-to-top a{
+		text-align:center;
+		text-decoration:none;
+		color:#d1d1d1;
+		display:block;
+		width:80px;
+		
+		-moz-transition:color 1s; 
+		-webkit-transition:color 1s;
+		-o-transition:color 1s;
+	}
+	#back-to-top a:hover{
+		color:#979797;
+	}
+	#back-to-top a span{
+		background:#d1d1d1;
+		border-radius:6px;
+		display:block;
+		height:80px;
+		width:80px;
+		background:#d1d1d1 url(../images/arrow-up.png) no-repeat center center;
+		margin-bottom:5px;
+		-moz-transition:background 1s;
+		-webkit-transition:background 1s;
+		-o-transition:background 1s;
+	}
+	#back-to-top a:hover span{
+		background:#979797 url(../images/arrow-up.png) no-repeat center center;
+	}
+

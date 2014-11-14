@@ -1,0 +1,63 @@
+{% extends "_base.html" %}
+{% block content %}
+<h3>{{ post[1] }}</h3>
+<hr>
+<div class="pull-right">
+  <small>{{ post[2] }}  发布于: {{ post[5] }}&nbsp;&nbsp;&nbsp;&nbsp;</small>
+{% if check_login %}
+        <a class="btn btn-xs btn-info" href="/modify/{{ post[0] }}">Update</a>
+        <a class="btn btn-xs btn-danger" href="/delete/{{ post[0] }}">Delete</a>
+{% else %}
+<!-- Button trigger modal -->
+        <a class="btn btn-xs btn-info" data-toggle="modal" data-target="#Login">Update</a>
+        <a class="btn btn-xs btn-danger" data-toggle="modal" data-target="#Login">Delete</a>
+
+<!-- Modal -->
+<div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="ModalLabel">验证密码</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/user/login" method="post" class="compose">
+            <div class="clearfix">
+                <label for="xlInput3">输入你的管理密码</label>
+                <div class="input">
+                  <input name="password" type="password" class="span3" />
+                </div>
+            </div><!-- /clearfix -->
+                  <input type="hidden" name="id" value="{{ post[0] }}"/>
+            </div>
+            {{ xsrf_form_html() }}
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="提交">
+            </div>
+              </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% end %}
+
+</div><!-- end pull-right -->
+<div class="clearfix"></div>
+<hr>
+
+<div class="body"><pre class="prettyprint linenums" style="overflow:auto">{{ post[4]}}</pre></div>
+
+{% end %}
+
+{% block js %}
+<link type="text/css"   rel="stylesheet"href="{{static_url('css/colorful.css')}}">
+<!-- <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script> -->
+<script type="text/javascript" src="{{ static_url('js/prettify/prettify.min.js') }}"></script>
+<script type="text/javascript">$(document).ready(function(){prettyPrint();})</script>
+
+ {% end %}

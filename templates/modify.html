@@ -1,0 +1,65 @@
+{% extends "_base.html" %}
+{% block content %}
+<h3>Modify:</h3>
+<hr>
+<form id="pasteform"  class="form-horizontal" role="form" action="/modify/{{ post[0] }}" method="POST">
+      {% raw xsrf_form_html() %}
+      <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="id_poster">Poster:</label>
+        <div class="col-sm-5">
+          <input class="form-control" type="text" id="id_poster" name="poster"value="{{ post[2] }}">
+        </div>
+      </div>
+  <div class="form-group form-group-sm">
+    <label class="col-sm-2 control-label" for="id_title">Title:</label>
+    <div class="col-sm-8">
+      <input class="form-control" type="text" id="id_title" name="title" value="{{ post[1] }}">
+    </div>
+  </div>
+
+    <div class="form-group form-group-sm">
+    <label class="col-sm-2 control-label" for="id_syntax">Syntax:</label>
+    <div class="col-sm-4">
+       <select class="form-control" name="syntax" id="id_syntax">
+                   <option value="Text" {{if_out(post[3]=='Text','selected="selected"')}}>Text</option>
+                   <option value="C/C++ {{if_out(post[3]=='C/C++','selected="selected"')}}">C/C++</option>
+                   <option value="C#" {{if_out(post[3]=='C#','selected="selected"')}}>C#</option>
+                   <option value="CSS" {{if_out(post[3]=='CSS','selected="selected"')}}>CSS</option>
+                   <option value="Delphi" {{if_out(post[3]=='Delphi','selected="selected"')}}>Delphi</option>
+                   <option value="Erlang" {{if_out(post[3]=='Erlang','selected="selected"')}}>Erlang</option>   
+                   <option value="Go" {{if_out(post[3]=='Go','selected="selected"')}}>Go</option>
+                   <option value="Haskell" {{if_out(post[3]=='Haskell','selected="selected"')}}>Haskell</option>
+                   <option value="HTML" {{if_out(post[3]=='HTML','selected="selected"')}}>HTML</option>
+                   <option value="Java" {{if_out(post[3]=='Java','selected="selected"')}}>Java</option>
+                   <option value="JavaScript" {{if_out(post[3]=='JavaScript','selected="selected"')}}>JavaScript</option>
+                   <option value="Lua" {{if_out(post[3]=='Lua','selected="selected"')}}>Lua</option>
+                   <option value="Makefile" {{if_out(post[3]=='Makefile','selected="selected"')}}>Makefile</option>
+                   <option value="SQL" {{if_out(post[3]=='SQL','selected="selected"')}}>SQL</option>
+                   <option value="Nginx" {{if_out(post[3]=='Nginx','selected="selected"')}}>Nginx configuration file</option>
+                   <option value="Objective-C" {{if_out(post[3]=='Object-C','selected="selected"')}}>Objective-C</option>
+                   <option value="Perl" {{if_out(post[3]=='Perl','selected="selected"')}}>Perl</option>
+                   <option value="PHP" {{if_out(post[3]=='PHP','selected="selected"')}}>PHP</option>
+                   <option value="Python" {{if_out(post[3]=='Python','selected="selected"')}}>Python</option>     
+                   <option value="Ruby" {{if_out(post[3]=='Ruby','selected="selected"')}}>Ruby</option>
+                   <option value="Other" {{if_out(post[3]=='Other','selected="selected"')}}>Other</option>               
+                   </select>
+    </div>
+    </div>
+
+    <div class="form-group form-group-sm">
+    <label class="col-sm-2 control-label" for="id_content">Content:</label>
+    <div class="col-sm-offset-2 col-sm-10">
+       <textarea class="form-control" rows="15" id="id_content" name="content" >{{ post[4] }}</textarea>
+    </div>
+    </div>
+    <div class="form-group form-group-sm">
+      <label class="col-sm-2 control-label" for="id_password"">Password:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" id="id_password" name="password" value="{{ post[6] }}">
+      </div>
+    </div>
+    <div class="col-sm-offset-2">
+          <input type="submit" class="btn btn-primary" value="Paste!">
+    </div>
+</form>
+{% end %}

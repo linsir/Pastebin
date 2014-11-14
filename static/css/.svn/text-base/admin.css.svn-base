@@ -1,0 +1,179 @@
+/*
+Author: Start Bootstrap - http://startbootstrap.com
+'SB Admin' HTML Template by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0.
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* ATTN: This is mobile first CSS - to update 786px and up screen width use the media query near the bottom of the document! */
+
+/* Global Styles */
+
+body {
+  margin-top: 0px;
+}
+
+/*@media (min-width: 1024px) {
+    .container {
+        max-width: 970px;
+    }
+}*/
+/* Table Headers */
+
+table.tablesorter thead {
+  cursor: pointer;
+}
+
+table.tablesorter thead tr th:hover {
+  background-color: #808080;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+  display: block;
+  height: 400px;
+}
+
+.flot-chart-content {
+  width: 100%;
+  height: 100%;
+}
+/* Edit Below to Customize Widths > 768px */
+@media (min-width:768px) {
+
+  /* Wrappers */
+
+  #wrapper {
+	padding-left: 125px;
+  }
+
+  #page-wrapper {
+	padding: 15px 25px;
+  }
+
+  .bs-docs-nav {
+    text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+    background-color: #563d7c;
+    border-color: #463265;
+    box-shadow: 0 1px 0 rgba(255,255,255,.1);
+  }
+  .bs-docs-nav .navbar-collapse {
+    border-color: #463265;
+  }
+  .bs-docs-nav .navbar-brand {
+    color: #fff;
+  }
+  .bs-docs-nav .navbar-nav > li > a {
+    color: #cdbfe3;
+  }
+  .bs-docs-nav .navbar-nav > li > a:hover {
+    color: #fff;
+  }
+  .bs-docs-nav .navbar-nav > .active > a,
+  .bs-docs-nav .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #463265;
+  }
+  .bs-docs-nav .navbar-toggle {
+    border-color: #563d7c;
+  }
+  .bs-docs-nav .navbar-toggle:hover {
+    background-color: #463265;
+    border-color: #463265;
+  }
+
+
+  /* Side Nav */
+
+  .side-nav {
+	margin-left: -225px;
+	left: 225px;
+	width: 100px;
+	position: fixed;
+	top: 50px;
+	height: 100%;
+	border-radius: 0;
+	border: none;
+	background-color: #7E3D76;
+	overflow-y: auto;
+  }
+
+  /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
+
+  .side-nav>li.dropdown>ul.dropdown-menu {
+	position: relative;
+	min-width: 225px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a {
+	color: #999999;
+	padding: 15px 15px 15px 25px;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
+	color: #fff;
+	background-color: #080808;
+  }
+
+  .side-nav>li>a {
+	width: 225px;
+  }
+
+  .navbar-inverse .navbar-nav>li>a:hover,
+  .navbar-inverse .navbar-nav>li>a:focus {
+	background-color: #006633;
+  }
+
+  /* Nav Messages */
+
+  .messages-dropdown .dropdown-menu {
+	min-width: 300px;
+  }
+
+  .messages-dropdown .dropdown-menu li a {
+	white-space: normal;
+  }
+
+}
+#tag-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tag-list li {
+    float: left;
+    border: 1px solid #A9A9A9;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 2px 6px;
+    margin: 3px;
+    font-size: 12px;
+}
+
+#tag-list li:hover {
+    cursor: pointer;
+}
+
+#tag-list li.checked {
+    border: 2px solid #006633;
+    color: #006633;
+}
+
+#tag-list li input[type=checkbox] {
+    display: none;
+}
+

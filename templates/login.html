@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% block content %}
+<form action="/login" method="POST" class="form">
+<legend>管理员登录</legend>
+        <div class="clearfix">
+          <label for="xlInput3">用户名:</label>
+          <div class="input">
+            <input name="username" type="text"  id="username" />
+          </div>
+        </div><!-- /clearfix -->
+        <div class="clearfix">
+          <label for="xlInput3">密码:</label>
+          <div class="input">
+            <input name="password" type="password"  id="password" />
+            
+          </div>
+        </div><!-- /clearfix -->
+     <div >
+          <input type="submit" class="btn btn-primary" value="登录">
+        </div>
+  </div>
+  {{ xsrf_form_html() }}
+</form>
+{% end %}

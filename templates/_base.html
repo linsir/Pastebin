@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="baidu-site-verification" content="aV3W1OBw4B" />
+  <title>Pastebin</title>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!-- Le styles -->
+  <link rel="stylesheet" type="text/css" href="{{static_url('css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{static_url('css/fixtop.css')}}">
+</head>
+<body id="top">
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+  <header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand "><strong>Pastebin</strong></a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav nav-pills navbar-right">
+          <li>
+            <a href="/new">New</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- end_header -->
+<div class="clearfix"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          {% block content %}
+          {% end %}
+        </div><!-- end mainpage -->
+      </div><!-- end row -->
+    </div><!-- /.container -->
+
+   <footer align="center">
+     <div class="container footer">
+      <hr>
+      &copy; Copyright 2014|Powered By 
+       <a href="/" title="Powered By Linsir">Linsir</a> with
+       <a href="http://www.tornadoweb.org" target="_blank">Tornado</a>.
+       <span class="label label-success">{% set request_time = 1000.0 * handler.request.request_time() %}{{"%.2f ms" % request_time}}</span>
+     </div>
+   </footer>
+
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script src="{{static_url('js/bootstrap.min.js')}}"></script>
+{% block js %} {% end %}
+<script type="text/javascript">
+    $(document).ready(function(){
+    //首先将#back-to-top隐藏
+    $("#back-to-top").hide();
+    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+    $(function () {
+        $(window).scroll(function(){
+        if ($(window).scrollTop()>100){
+        $("#back-to-top").fadeIn(1500);
+        }
+        else
+        {
+        $("#back-to-top").fadeOut(1500);
+        }
+        });
+        //当点击跳转链接后，回到页面顶部位置
+        $("#back-to-top").click(function(){
+        $('body,html').animate({scrollTop:0},1000);
+        return false;
+        });
+        });
+        });
+</script>
+
+</body>
+</html>
