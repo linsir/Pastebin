@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import sqlite3
 import random
 from utils import fmt_time, encrypt
@@ -27,7 +29,7 @@ class Data_init(object):
 
     def test_data(self):
         types = ['Python', 'Ruby', "Lua","CSS","Java","JavaScript"]
-        for i in range(125,300,5):
+        for i in range(0,100,5):
             title = str(i) + ".Pastebin_for_test_code"
             type = random.choice(types)
             time = fmt_time()
@@ -50,5 +52,5 @@ if __name__ == '__main__':
         data.test_data()
     else:
         data.set_admin_password(username, password)
-        data.test_data()  
+        # data.test_data()  
 

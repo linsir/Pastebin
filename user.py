@@ -4,7 +4,7 @@
 # @Author  : Linsir (vi5i0n@qq.com)
 # @Link    : http://Linsir.sinaapp.com
 # @Version : $Id$
-
+from tornado.escape import xhtml_escape
 from handlers import BaseHandler
 from utils import get_paged, PageInfo, fmt_time, if_out
 from db import *
@@ -35,11 +35,11 @@ class Modify(BaseHandler):
         if self.check_login(id):
             id = int(id)
             url = '/detail/' + str(id)
-            title = self.get_argument('title', '')
-            poster = self.get_argument('poster', '')
-            password = self.get_argument('password', '')
+            title = xhtml_escape(self.get_argument('title', ''))
+            poster = xhtml_escape(self.get_argument('poster', ''))
+            password = xhtml_escape(self.get_argument('password', ''))
             type = self.get_argument('syntax', 'other')
-            content = self.get_argument('content', '')
+            content = xhtml_escape(self.get_argument('content', ''))
             time = fmt_time()
             Post.modify(id, title, poster, type, content, time, password)
             self.redirect(url) 
