@@ -55,9 +55,9 @@
 {% end %}
 
 {% block js %}
-<link type="text/css"   rel="stylesheet"href="{{static_url('css/colorful.css')}}">
+<link type="text/css"   rel="stylesheet"href="{{static_url('css/prettify.css')}}">
 <!-- <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script> -->
-<script type="text/javascript" src="{{ static_url('js/prettify/prettify.min.js') }}"></script>
+<script type="text/javascript" src="{{ static_url('js/prettify.min.js') }}"></script>
 <script type="text/javascript">
 $(function() {
     $('pre').addClass('prettyprint ').attr('style', 'overflow:auto');// markdown生成的code没有class属性
