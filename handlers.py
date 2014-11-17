@@ -60,7 +60,7 @@ class NewPost(BaseHandler):
     def post(self):
         title = xhtml_escape(self.get_argument('title', ''))
         poster = xhtml_escape(self.get_argument('poster', ''))
-        password = self.get_argument('password', '')
+        password = xhtml_escape(self.get_argument('password', ''))
         type = xhtml_escape(self.get_argument('syntax', 'other'))
         content = xhtml_escape(self.get_argument('content', ''))
         time = fmt_time()

@@ -38,7 +38,7 @@ class Modify(BaseHandler):
             title = xhtml_escape(self.get_argument('title', ''))
             poster = xhtml_escape(self.get_argument('poster', ''))
             password = xhtml_escape(self.get_argument('password', ''))
-            type = self.get_argument('syntax', 'other')
+            type = xhtml_escape(self.get_argument('syntax', 'other'))
             content = xhtml_escape(self.get_argument('content', ''))
             time = fmt_time()
             Post.modify(id, title, poster, type, content, time, password)
