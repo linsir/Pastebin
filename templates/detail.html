@@ -1,6 +1,6 @@
 {% extends "_base.html" %}
 {% block content %}
-<h3>{{ post[1] }}</h3>
+<h3 align="center">{{ post[1] }}</h3>
 <hr>
 <div class="pull-right">
   <small>{{ post[2] }}  发布于: {{ post[5] }}&nbsp;&nbsp;&nbsp;&nbsp;</small>
@@ -41,7 +41,7 @@
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 {% end %}
@@ -49,8 +49,11 @@
 </div><!-- end pull-right -->
 <div class="clearfix"></div>
 <hr>
-
-<div class="body"><pre>{{ post[4]}}</pre></div>
+<div class="pull-right">
+ <button id="clip_button" class="btn btn-success" data-clipboard-target="clip_text"><b>复制代码</b></button>
+</div>
+<div class="clearfix"></div>
+<div id="clip_text" class="body"><pre>{{ post[4]}}</pre></div>
 
 {% end %}
 
@@ -64,5 +67,17 @@ $(function() {
     prettyPrint();
 });
 </script>
+<script type="text/javascript" src="{{static_url('js/ZeroClipboard.js')}}"></script>
+<script type="text/javascript">
+     // 定义一个新的复制对象
+     var clip = new ZeroClipboard( document.getElementById("clip_button"), {
+       moviePath: "{{static_url('js/ZeroClipboard.swf')}}"
+     } );
 
+     // 复制内容到剪贴板成功后的操作
+     clip.on( 'complete', function(client, args) {
+        // alert("复制成功，复制内容为："+ args.text);
+        alert("复制成功！")
+     } );
+   </script>
  {% end %}
