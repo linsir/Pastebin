@@ -3,7 +3,6 @@
 # @Date    : 2014-11-05 10:19:39
 # @Author  : Linsir (vi5i0n@hotmail.com)
 # @Link    : http://Linsir.sinaapp.com
-# @Version : $Id$
 
 from tornado.web import RequestHandler
 from tornado.escape import xhtml_escape

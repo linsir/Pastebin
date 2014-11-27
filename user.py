@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date    : 2014-11-08 16:08:21
-# @Author  : Linsir (vi5i0n@qq.com)
+# @Author  : Linsir (vi5i0n@hotmail.com)
 # @Link    : http://Linsir.sinaapp.com
-# @Version : $Id$
 from tornado.escape import xhtml_escape
 from handlers import BaseHandler
 from utils import get_paged, PageInfo, fmt_time, if_out
