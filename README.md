@@ -4,4 +4,4 @@
 
 采用Tornado+Sqlite3.并身没打算使用,就使用轻量级的Sqlite3了.
 
-**Demo:** <http://paste.linsir.tk>
+**Demo:** <http://paste.linsir.org>
