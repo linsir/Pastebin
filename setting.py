@@ -5,7 +5,7 @@
 # @Link    : http://Linsir.sinaapp.com
 # @Version : $Id$
 
-
+import os
 
 site_name = 'Pastebin'
 
@@ -17,4 +17,4 @@ is_debug = False
 
 data_file = 'data.db'
 
-
+data_path = os.path.dirname(__file__) + '/' + data_file

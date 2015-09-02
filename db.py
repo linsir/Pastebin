@@ -6,13 +6,13 @@
 # @Version : $Id$
 import os
 import sqlite3
-from setting import data_file, paged_size
+from setting import data_path, paged_size
 
 class _Post(object):
     """docstring for _Post"""
     def __init__(self):
-        self.data_file = os.getcwd() + '/' + data_file
-        self.conn = sqlite3.connect(data_file)
+        self.data_file = data_path
+        self.conn = sqlite3.connect(self.data_file)
         self.cur = self.conn.cursor()
 
     def query(self, paged, type=None, paged_size=paged_size,):
@@ -68,8 +68,8 @@ Post = _Post()
 
 class _Admin(object):
     def __init__(self):
-        self.data_file = data_file
-        self.conn = sqlite3.connect(data_file)
+        self.data_file = data_path
+        self.conn = sqlite3.connect(self.data_file)
         self.cur = self.conn.cursor()
 
     def get_username(self):
