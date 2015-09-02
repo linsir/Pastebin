@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 import sqlite3
 import random
 from utils import fmt_time, encrypt
@@ -8,7 +9,7 @@ from setting import data_file
 class Data_init(object):
     """docstring for data_init"""
     def __init__(self):
-        self.data_file = data_file
+        self.data_file = os.getcwd() + '/' + data_file
         self.conn = sqlite3.connect(data_file)
         self.cur = self.conn.cursor()
 

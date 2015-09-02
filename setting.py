@@ -5,7 +5,7 @@
 # @Link    : http://Linsir.sinaapp.com
 # @Version : $Id$
 
-import os
+
 
 site_name = 'Pastebin'
 
@@ -16,4 +16,5 @@ cookie_timeout = 1
 is_debug = False
 
 data_file = 'data.db'
+
 
